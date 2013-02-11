@@ -94,11 +94,15 @@
 						<id>start</id>
 						<phase>pre-integration-test</phase>
 						<goals>
-							<goal>java</goal>
+							<goal>exec</goal>
 						</goals>
 						<configuration>
-							<mainClass>com.acme.dbunit.StartServer</mainClass>
-							<classpathScope>test</classpathScope>
+							<executable>src/test/scripts/start.sh</executable>
+							<arguments>
+								<classpath>
+									<dependency>com.h2database:h2</dependency>
+								</classpath>
+							</arguments>
 						</configuration>
 					</execution>
 					<execution>
@@ -106,15 +110,23 @@
 						<id>stop</id>
 						<phase>post-integration-test</phase>
 						<goals>
-							<goal>java</goal>
+							<goal>exec</goal>
 						</goals>
 						<configuration>
-							<mainClass>com.acme.dbunit.StopServer</mainClass>
-							<classpathScope>test</classpathScope>
+							<executable>src/test/scripts/stop.sh</executable>
+							<arguments>
+								<classpath>
+									<dependency>com.h2database:h2</dependency>
+								</classpath>
+							</arguments>
 						</configuration>
 					</execution>
 				</executions>
+				<configuration>
+					<includeProjectDependencies>true</includeProjectDependencies>
+				</configuration>
 			</plugin>
+
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
