@@ -48,6 +48,7 @@
 		<version.junit>4.10</version.junit>
 		<version.logback>1.0.7</version.logback>
 		<version.slf4j>1.7.2</version.slf4j>
+		<version.mysql>8.0.26</version.mysql>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -182,65 +183,52 @@
 	</build>
 
 	<dependencies>
-
-		<!-- COMMON -->
-
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${version.mysql}</version>
+		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>${version.guava}</version>
 		</dependency>
-
-
-		<!-- DATABASE -->
-
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>${version.h2database}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.jdbi</groupId>
 			<artifactId>jdbi</artifactId>
 			<version>${version.jdbi}</version>
 		</dependency>
-
-		<!-- LOGGING -->
-
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
 			<version>${version.logback}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>${version.logback}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${version.slf4j}</version>
 		</dependency>
-
-		<!-- TEST -->
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${version.junit}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.dbunit</groupId>
 			<artifactId>dbunit</artifactId>
 			<version>${version.dbunit}</version>
 		</dependency>
-
 	</dependencies>
 
 </project>
